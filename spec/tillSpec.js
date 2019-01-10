@@ -19,4 +19,9 @@ describe("Till", function() {
     till.add("Hot Chocoloate", 4.5, 1)
     expect(till.total).toEqual(14)
   })
+
+  it("can add items to order", function() {
+    till.add("Cafe Latte", 4.75, 2)
+    expect(till.order).toContain(["Cafe Latte", 4.75, 2])
+  })
 })
