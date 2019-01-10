@@ -56,4 +56,19 @@ describe("Till", function() {
     till.add("Choc Mudcake", 6.4, 4)
     expect(till.displayTotal()).toEqual('39.60')
   })
+
+  it("applies discount to orders containing muffins", function() {
+    till.add("Cafe Latte", 4.75, 2)
+    till.add("Hot Chocoloate", 4.5, 1)
+    till.add("Muffin", 5, 3)
+    expect(till.displayTotal()).toEqual('27.50')
+  })
+
+  it("can apply multiple discounts", function() {
+    till.add("Cafe Latte", 4.75, 2)
+    till.add("Hot Chocoloate", 4.5, 1)
+    till.add("Choc Mudcake", 6.4, 10)
+    till.add("Muffin", 5, 3)
+    expect(till.displayTotal()).toEqual('86.92')
+  })
 })

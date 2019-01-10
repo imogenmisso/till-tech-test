@@ -6,13 +6,17 @@ function Till() {
 }
 
 Till.prototype.add = function(item, price, quantity) {
-  this.total += (price * quantity);
+  if (item === "Muffin") {
+    this.total += price * quantity * 0.9
+  } else {
+    this.total += price * quantity;
+  }
   this.order.push([item, price, quantity])
 }
 
 Till.prototype.displayTotal = function() {
   if (this.total >= 50) {
-    this.applyDiscount()
+    return this.applyDiscount()
   } else {
     return this.total.toFixed(2);
   }
