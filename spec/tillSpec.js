@@ -24,4 +24,10 @@ describe("Till", function() {
     till.add("Cafe Latte", 4.75, 2)
     expect(till.order).toContain(["Cafe Latte", 4.75, 2])
   })
+
+  it("can return the total of the order", function() {
+    till.add("Cafe Latte", 4.75, 2)
+    till.add("Hot Chocoloate", 4.5, 1)
+    expect(till.displayTotal()).toEqual(14)
+  })
 })
