@@ -16,3 +16,7 @@ Till.prototype.displayTotal = function() {
 Till.prototype.calculateTax = function() {
   return parseFloat(this.total * (this.TAX / 100)).toFixed(2);
 }
+
+Till.prototype.calculateChange = function(moneyGiven) {
+  return moneyGiven - this.total
+}

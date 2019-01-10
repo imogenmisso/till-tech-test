@@ -36,4 +36,10 @@ describe("Till", function() {
     till.add("Hot Chocoloate", 4.5, 1)
     expect(till.calculateTax()).toEqual('1.21')
   })
+
+  it("can calculate the amount of change for an order", function() {
+    till.add("Cafe Latte", 4.75, 2)
+    till.add("Hot Chocoloate", 4.5, 1)
+    expect(till.calculateChange(20)).toEqual(6)
+  })
 })
